@@ -54,6 +54,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+      {/* hero section end */}
     </>
   );
 };
