@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import tourData from '../assets/data/tours';
 import calculateAvgRating from '../utils/avgRating';
 import avatar from '../assets/images/avatar.jpg';
+import Booking from '../components/Booking/Booking';
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -32,15 +33,14 @@ const TourDetails = () => {
   const options = { day: 'numeric', month: 'long', year: 'numeric' };
 
   // submit request to server
-  const submitHandler = e => {
-    e.preventDefault()
+  const submitHandler = (e) => {
+    e.preventDefault();
     const reviewText = reviewMsgRef.current.value;
 
-    alert(`${reviewText}, ${tourRating}`)
+    alert(`${reviewText}, ${tourRating}`);
 
     // lAATER CALL FROM BACKEND
-
-  }
+  };
 
   return (
     <>
@@ -57,10 +57,10 @@ const TourDetails = () => {
                   <div className="d-flex align-items-center gap-5">
                     <span className="tour__rating d-flex align-items-center gap-1">
                       <i
-                        className="ri-star-fill"
+                        className="ri-star-s-fill"
                         style={{ color: 'var(--secondary-color' }}
                       ></i>{' '}
-                      {calculateAvgRating === 0 ? null : avgRating}
+                      {avgRating === 0 ? null : avgRating}
                       {totalRating === 0 ? (
                         'Not rated'
                       ) : (
@@ -161,8 +161,8 @@ const TourDetails = () => {
                 {/* Tour reviews section section end */}
               </div>
             </Col>
-
-            <Col lg='4'>
+            <Col lg="4">
+              <Booking tour={tour} avgRating={avgRating}/>
             </Col>
           </Row>
         </Container>
