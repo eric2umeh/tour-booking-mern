@@ -10,6 +10,7 @@ import Subtitle from '../shared/Subtitle';
 import SearchBox from '../shared/SearchBox';
 import ServiceList from '../services/ServiceList';
 import FeaturedTourList from '../components/Featured-tours/FeaturedTourList';
+import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery';
 
 const Home = () => {
   return (
@@ -88,16 +89,17 @@ const Home = () => {
       <section>
         <Container>
           <Row>
-            <Col lg='6'>
+            <Col lg="6">
               <div className="experience__content">
                 <Subtitle subtitle={'Experience'} />
 
                 <h2>
-                  With our all experience <br/> we will serve you
+                  With our all experience <br /> we will serve you
                 </h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, suscipit!
-                  <br/>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nihil, suscipit!
+                  <br />
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                 </p>
               </div>
@@ -117,7 +119,7 @@ const Home = () => {
                 </div>
               </div>
             </Col>
-            <Col lg='6'>
+            <Col lg="6">
               <div className="experience__img">
                 <img src={experienceImg} alt="" />
               </div>
@@ -127,6 +129,23 @@ const Home = () => {
       </section>
       {/* experience section end */}
 
+      {/* Galleery Section start*/}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <Subtitle subtitle={'Gallery'} />
+              <h2 className="gallery__title">
+                Visit our customers tour gallery
+              </h2>
+            </Col>
+            <Col lg='12'>
+              <MasonryImagesGallery/>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      {/* Gallery Section end */}
     </>
   );
 };
